@@ -13,6 +13,7 @@ public class AutorRequestDto {
     @NotNull
     @NotEmpty
     @Email
+    @DuplicatedEmail(unique = false)
     private String email;
     @NotNull
     @NotEmpty
