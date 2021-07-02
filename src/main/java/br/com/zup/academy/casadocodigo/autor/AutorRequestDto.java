@@ -1,7 +1,9 @@
 package br.com.zup.academy.casadocodigo.autor;
 
-import javax.validation.constraints.*;
-import java.time.LocalDateTime;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class AutorRequestDto {
 
@@ -27,5 +29,9 @@ public class AutorRequestDto {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public Autor toModel() {
+        return new Autor(this.nome, this.email, this.descricao);
     }
 }
