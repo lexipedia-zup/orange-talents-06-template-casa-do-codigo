@@ -1,5 +1,7 @@
 package br.com.zup.academy.casadocodigo.autor;
 
+import br.com.zup.academy.casadocodigo.validations.Unique;
+
 import javax.validation.constraints.*;
 
 public class AutorRequestDto {
@@ -8,7 +10,7 @@ public class AutorRequestDto {
     private String nome;
     @NotBlank
     @Email
-    @DuplicatedEmail(unique = true)
+    @Unique(fieldName = "email", domainClass = Autor.class)
     private String email;
     @NotBlank
     @Size(max = 400)
