@@ -21,6 +21,7 @@ public class CategoriaController {
     public ResponseEntity<?> criar(@RequestBody @Valid CategoriaRequestDto categoriaRequestDto){
 
         Categoria categoria = categoriaRequestDto.toModel(categoriaRequestDto);
+
         categoriaRepository.save(categoria);
         return ResponseEntity.ok().build();
 
