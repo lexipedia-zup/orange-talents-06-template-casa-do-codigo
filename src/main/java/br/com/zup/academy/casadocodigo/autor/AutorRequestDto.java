@@ -1,22 +1,16 @@
 package br.com.zup.academy.casadocodigo.autor;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class AutorRequestDto {
 
-    @NotNull
-    @NotEmpty
+    @NotBlank
     private String nome;
-    @NotNull
-    @NotEmpty
+    @NotBlank
     @Email
-    @DuplicatedEmail(unique = false)
+    @DuplicatedEmail(unique = true)
     private String email;
-    @NotNull
-    @NotEmpty
+    @NotBlank
     @Size(max = 400)
     private String descricao;
 

@@ -1,10 +1,7 @@
 package br.com.zup.academy.casadocodigo.autor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -12,16 +9,13 @@ public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @NotNull
-    @NotEmpty
+    @NotBlank
     private String nome;
-    @NotNull
-    @NotEmpty
+    @NotBlank
     @Email
     @Column(unique = true, nullable = false)
     private String email;
-    @NotNull
-    @NotEmpty
+    @NotBlank
     @Size(max = 400)
     private String descricao;
     @NotNull
