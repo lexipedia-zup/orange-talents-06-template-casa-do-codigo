@@ -20,6 +20,6 @@ public class CategoriaRequestDto {
     }
 
     public Categoria toModel(CategoriaRequestDto categoriaRequestDto) {
-        return new Categoria(categoriaRequestDto);
+        return new Categoria(categoriaRequestDto.getNome());
     }
 }
