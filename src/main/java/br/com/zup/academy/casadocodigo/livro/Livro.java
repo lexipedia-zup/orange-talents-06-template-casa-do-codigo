@@ -50,8 +50,8 @@ public class Livro {
     private Autor autor;
 
     public Livro(){
-
     }
+
     public Livro(String titulo,
                  String resumo,
                  String sumario,
@@ -70,5 +70,13 @@ public class Livro {
         this.dataPublicacao = dataPublicacao;
         this.categoria = categoria;
         this.autor = autor;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
     }
 }

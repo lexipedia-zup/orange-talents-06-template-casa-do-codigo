@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -44,6 +45,13 @@ public class LivroController {
         livroRepository.save(livro);
 
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<LivroResponseDto>> buscarLivros(){
+        List<Livro> listaLivros = livroRepository.findAll();
+        List<LivroResponseDto> listaLivrosResponse = LivroResponseDto.toDtoList(listaLivros);
+        return ResponseEntity.ok().body(listaLivrosResponse);
     }
 
 }
