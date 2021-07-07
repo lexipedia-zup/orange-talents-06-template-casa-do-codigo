@@ -26,17 +26,16 @@ public class LivroController {
     private CategoriaRepository categoriaRepository;
 
     @PostMapping
-    public ResponseEntity<?> cadastrar(@Valid @RequestBody LivroRequestDto dto){
-
+    public ResponseEntity<?> cadastrar(@Valid @RequestBody LivroRequestDto dto) {
         Optional<Autor> autorOptional = autorRepository.findById(dto.getAutorId());
         Autor autor = null;
-        if(autorOptional.isPresent()){
+        if (autorOptional.isPresent()) {
             autor = autorOptional.get();
         }
 
         Optional<Categoria> categoriaOptional = categoriaRepository.findById(dto.getCategoriaId());
         Categoria categoria = null;
-        if(categoriaOptional.isPresent()){
+        if (categoriaOptional.isPresent()) {
             categoria = categoriaOptional.get();
         }
 
@@ -48,10 +47,16 @@ public class LivroController {
     }
 
     @GetMapping
-    public ResponseEntity<List<LivroResponseDto>> buscarLivros(){
+    public ResponseEntity<List<LivroResponseDto>> buscarLivros() {
         List<Livro> listaLivros = livroRepository.findAll();
         List<LivroResponseDto> listaLivrosResponse = LivroResponseDto.toDtoList(listaLivros);
         return ResponseEntity.ok().body(listaLivrosResponse);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<PaginaDetalheLivro> buscaPaginaDetalhe(@PathVariable Integer id) {
+        PaginaDetalheLivro paginaDetalheLivro = new PaginaDetalheLivro(livroRepository.findById(id).get());
+        return ResponseEntity.ok().body(paginaDetalheLivro);
     }
 
 }

@@ -32,4 +32,11 @@ public class Autor {
         this.dataCriacaoAutor = LocalDateTime.now();
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
 }
