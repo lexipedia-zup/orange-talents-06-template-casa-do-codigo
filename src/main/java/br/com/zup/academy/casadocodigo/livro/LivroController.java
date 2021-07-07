@@ -55,7 +55,12 @@ public class LivroController {
 
     @GetMapping("/{id}")
     public ResponseEntity<PaginaDetalheLivro> buscaPaginaDetalhe(@PathVariable Integer id) {
-        PaginaDetalheLivro paginaDetalheLivro = new PaginaDetalheLivro(livroRepository.findById(id).get());
+        Livro livro = null;
+        Optional<Livro> livroOptional = livroRepository.findById(id);
+        if (livroOptional.isPresent()) {
+            livro = livroOptional.get();
+        }
+        PaginaDetalheLivro paginaDetalheLivro = new PaginaDetalheLivro(livro);
         return ResponseEntity.ok().body(paginaDetalheLivro);
     }
 
