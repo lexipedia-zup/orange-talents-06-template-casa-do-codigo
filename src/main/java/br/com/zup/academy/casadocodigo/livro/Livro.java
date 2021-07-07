@@ -23,7 +23,6 @@ public class Livro {
     @Size(max = 500)
     private String resumo;
 
-    @Column(length = 10000)
     private String sumario;
 
     @NotNull
