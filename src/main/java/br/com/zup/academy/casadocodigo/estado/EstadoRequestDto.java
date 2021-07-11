@@ -11,11 +11,11 @@ import javax.validation.constraints.NotNull;
 public class EstadoRequestDto {
 
     @NotBlank
-    @Unique(domainClass = Estado.class, fieldName = "nome")
+    @Unique(domainClass = Estado.class, fieldName = "nome", message = "Esse estado já foi cadastrado")
     private String nome;
 
     @NotNull
-    @Existe(domainClass = Pais.class, fieldName = "id")
+    @Existe(domainClass = Pais.class, fieldName = "id", message = "País não cadastrado")
     private Integer idPais;
 
     public EstadoRequestDto() {
