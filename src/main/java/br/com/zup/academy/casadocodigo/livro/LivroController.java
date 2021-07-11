@@ -30,15 +30,16 @@ public class LivroController {
         Optional<Autor> autorOptional = autorRepository.findById(dto.getAutorId());
         Autor autor = null;
         if (autorOptional.isPresent()) {
-            autor = autorOptional.get();
+            return ResponseEntity.notFound().build();
         }
-
+        autor = autorOptional.get();
         Optional<Categoria> categoriaOptional = categoriaRepository.findById(dto.getCategoriaId());
         Categoria categoria = null;
         if (categoriaOptional.isPresent()) {
-            categoria = categoriaOptional.get();
-        }
+            return ResponseEntity.notFound().build();
 
+        }
+        categoria = categoriaOptional.get();
         Livro livro = dto.toModel(dto, categoria, autor);
 
         livroRepository.save(livro);
@@ -57,9 +58,10 @@ public class LivroController {
     public ResponseEntity<PaginaDetalheLivro> buscaPaginaDetalhe(@PathVariable Integer id) {
         Livro livro = null;
         Optional<Livro> livroOptional = livroRepository.findById(id);
-        if (livroOptional.isPresent()) {
-            livro = livroOptional.get();
+        if (!livroOptional.isPresent()) {
+            return ResponseEntity.notFound().build();
         }
+        livro = livroOptional.get();
         PaginaDetalheLivro paginaDetalheLivro = new PaginaDetalheLivro(livro);
         return ResponseEntity.ok().body(paginaDetalheLivro);
     }
