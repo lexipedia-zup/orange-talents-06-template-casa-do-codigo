@@ -2,16 +2,15 @@ package br.com.zup.academy.casadocodigo.estado;
 
 import br.com.zup.academy.casadocodigo.pais.Pais;
 import br.com.zup.academy.casadocodigo.validations.Existe;
-import br.com.zup.academy.casadocodigo.validations.Unique;
+import br.com.zup.academy.casadocodigo.validations.EstadoPaisUnico;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-
-public class EstadoRequestDto {
+@EstadoPaisUnico
+public class EstadoRequestDto{
 
     @NotBlank
-    @Unique(domainClass = Estado.class, fieldName = "nome", message = "Esse estado já foi cadastrado")
     private String nome;
 
     @NotNull
@@ -34,4 +33,5 @@ public class EstadoRequestDto {
         Estado estado = new Estado(dto.getNome(), pais);
         return estado;
     }
+
 }

@@ -27,10 +27,7 @@ public class ExisteValidator implements ConstraintValidator<Existe, Integer> {
     public boolean isValid(Integer value, ConstraintValidatorContext context) {
         Query query = em.createQuery("select 1 from "+ classe.getName() + " where "+ atributo +"=:value");
         query.setParameter("value", value);
-
-
         List<?> list = query.getResultList();
-
         return !list.isEmpty();
     }
 }
