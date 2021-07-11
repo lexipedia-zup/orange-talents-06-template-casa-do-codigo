@@ -33,7 +33,6 @@ public class DuplicatedValueValidator implements ConstraintValidator<Unique, Obj
         Query query = entityManager.createQuery("select 1 from " + classe.getName()+" where "+atributo+"=:value");
         query.setParameter("value", value);
         List<?> lista = query.getResultList();
-        Assert.state(lista.size() <= 1, "O "+atributo+" digitado já foi cadastrado no sistema.");
 
         return lista.isEmpty();
     }

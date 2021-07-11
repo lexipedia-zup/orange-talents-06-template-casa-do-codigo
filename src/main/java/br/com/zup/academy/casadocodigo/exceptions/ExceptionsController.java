@@ -28,4 +28,5 @@ public class ExceptionsController extends ResponseEntityExceptionHandler {
         ErrorObject errorObject = new ErrorObject(LocalDateTime.now(), descricaoErros, descricaoErrosObject);
         return new ResponseEntity<>(errorObject, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
+
 }
