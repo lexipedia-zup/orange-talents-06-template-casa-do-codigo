@@ -1,10 +1,8 @@
 package br.com.zup.academy.casadocodigo.validations;
 
 import br.com.zup.academy.casadocodigo.cliente.ClienteRequestDto;
-import br.com.zup.academy.casadocodigo.cliente.ObrigatoriedadeEstado;
 import br.com.zup.academy.casadocodigo.estado.Estado;
 import br.com.zup.academy.casadocodigo.estado.EstadoRepository;
-import br.com.zup.academy.casadocodigo.pais.PaisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;

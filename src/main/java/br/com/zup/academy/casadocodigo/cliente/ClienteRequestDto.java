@@ -2,10 +2,7 @@ package br.com.zup.academy.casadocodigo.cliente;
 
 import br.com.zup.academy.casadocodigo.estado.Estado;
 import br.com.zup.academy.casadocodigo.pais.Pais;
-import br.com.zup.academy.casadocodigo.validations.CpfOrCnpj;
-import br.com.zup.academy.casadocodigo.validations.Existe;
-import br.com.zup.academy.casadocodigo.validations.EstadoPertencePais;
-import br.com.zup.academy.casadocodigo.validations.Unique;
+import br.com.zup.academy.casadocodigo.validations.*;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.validation.constraints.Email;

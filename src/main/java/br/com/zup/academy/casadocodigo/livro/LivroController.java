@@ -29,13 +29,13 @@ public class LivroController {
     public ResponseEntity<?> cadastrar(@Valid @RequestBody LivroRequestDto dto) {
         Optional<Autor> autorOptional = autorRepository.findById(dto.getAutorId());
         Autor autor = null;
-        if (autorOptional.isPresent()) {
+        if (autorOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         autor = autorOptional.get();
         Optional<Categoria> categoriaOptional = categoriaRepository.findById(dto.getCategoriaId());
         Categoria categoria = null;
-        if (categoriaOptional.isPresent()) {
+        if (categoriaOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
 
         }

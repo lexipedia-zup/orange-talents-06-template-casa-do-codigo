@@ -37,6 +37,6 @@ public class ClienteController {
         Pais pais = paisRepository.findById(dto.getIdPais()).get();
         Cliente cliente = dto.toModel(estado, pais);
         clienteRepository.save(cliente);
-        return ResponseEntity.ok().body("Id do cliente cadastrado:" + cliente.getId());
+        return ResponseEntity.ok().body(cliente.getId());
     }
 }

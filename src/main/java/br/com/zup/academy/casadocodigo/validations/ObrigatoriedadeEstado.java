@@ -1,4 +1,4 @@
-package br.com.zup.academy.casadocodigo.cliente;
+package br.com.zup.academy.casadocodigo.validations;
 
 import br.com.zup.academy.casadocodigo.validations.EstadoPertencePaisValidator;
 import br.com.zup.academy.casadocodigo.validations.ObrigatoriedadeEstadoValidator;
