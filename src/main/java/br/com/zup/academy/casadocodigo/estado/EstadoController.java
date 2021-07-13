@@ -29,7 +29,7 @@ public class EstadoController {
 
         Optional<Pais> pais = paisRepository.findById(dto.getIdPais());
 
-        Estado estado = dto.toModel(dto, pais.get());
+        Estado estado = dto.toModel(pais.get());
 
         estadoRepository.save(estado);
 

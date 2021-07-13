@@ -103,14 +103,14 @@ public class LivroRequestDto {
         this.dataPublicacao = dataPublicacao;
     }
 
-    public Livro toModel(LivroRequestDto dto, Categoria categoria, Autor autor){
-        return new Livro(dto.getTitulo(),
-                dto.getResumo(),
-                dto.getSumario(),
-                dto.getPreco(),
-                dto.getNumeroDePaginas(),
-                dto.getIsbn(),
-                dto.getDataPublicacao(),
+    public Livro toModel(Categoria categoria, Autor autor){
+        return new Livro(this.titulo,
+                this.resumo,
+                this.sumario,
+                this.preco,
+                this.numeroDePaginas,
+                this.isbn,
+                this.dataPublicacao,
                 categoria,
                 autor);
     }

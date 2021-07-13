@@ -20,7 +20,7 @@ public class CategoriaController {
     @PostMapping
     public ResponseEntity<?> criar(@RequestBody @Valid CategoriaRequestDto categoriaRequestDto){
 
-        Categoria categoria = categoriaRequestDto.toModel(categoriaRequestDto);
+        Categoria categoria = categoriaRequestDto.toModel();
 
         categoriaRepository.save(categoria);
         return ResponseEntity.ok().build();

@@ -21,7 +21,7 @@ public class CategoriaRequestDto {
         return nome;
     }
 
-    public Categoria toModel(CategoriaRequestDto categoriaRequestDto) {
-        return new Categoria(categoriaRequestDto.getNome());
+    public Categoria toModel() {
+        return new Categoria(this.nome);
     }
 }

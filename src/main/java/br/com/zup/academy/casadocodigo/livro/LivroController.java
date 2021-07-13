@@ -40,7 +40,7 @@ public class LivroController {
 
         }
         categoria = categoriaOptional.get();
-        Livro livro = dto.toModel(dto, categoria, autor);
+        Livro livro = dto.toModel(categoria, autor);
 
         livroRepository.save(livro);
 

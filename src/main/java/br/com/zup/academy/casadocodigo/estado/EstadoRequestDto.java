@@ -29,8 +29,8 @@ public class EstadoRequestDto{
         return idPais;
     }
 
-    public Estado toModel(EstadoRequestDto dto, Pais pais){
-        Estado estado = new Estado(dto.getNome(), pais);
+    public Estado toModel( Pais pais){
+        Estado estado = new Estado(this.nome, pais);
         return estado;
     }
 
