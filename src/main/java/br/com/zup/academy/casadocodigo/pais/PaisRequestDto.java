@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 public class PaisRequestDto {
 
     @NotBlank
-    @Unique(fieldName = "nome", domainClass = Pais.class)
+    @Unique(fieldName = "nome", domainClass = Pais.class, message = "País já foi cadastrado")
     private String nome;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
@@ -24,8 +24,8 @@ public class PaisRequestDto {
         return nome;
     }
 
-    public Pais toModel(PaisRequestDto dto){
-        return new Pais(dto.getNome());
+    public Pais toModel(){
+        return new Pais(this.nome);
     }
 
 }

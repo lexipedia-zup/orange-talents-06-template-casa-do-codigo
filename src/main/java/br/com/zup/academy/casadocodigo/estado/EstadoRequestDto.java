@@ -13,7 +13,7 @@ public class EstadoRequestDto{
     @NotBlank
     private String nome;
 
-    @NotNull
+    @NotNull(message = "Um estado deve estar vinculado à um país")
     @Existe(domainClass = Pais.class, fieldName = "id", message = "País não cadastrado")
     private Integer idPais;
 

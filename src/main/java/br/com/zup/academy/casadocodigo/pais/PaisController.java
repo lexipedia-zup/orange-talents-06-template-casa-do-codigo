@@ -19,10 +19,12 @@ public class PaisController {
     @PostMapping
     public ResponseEntity<?> cadastrar(@RequestBody @Valid PaisRequestDto paisRequestDto) {
 
-        Pais pais = paisRequestDto.toModel(paisRequestDto);
+        Pais pais = paisRequestDto.toModel();
+
         paisRepository.save(pais);
 
         return ResponseEntity.ok().build();
+
     }
 
 }

@@ -1,8 +1,5 @@
 package br.com.zup.academy.casadocodigo.validations;
 
-import br.com.zup.academy.casadocodigo.pais.PaisRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;

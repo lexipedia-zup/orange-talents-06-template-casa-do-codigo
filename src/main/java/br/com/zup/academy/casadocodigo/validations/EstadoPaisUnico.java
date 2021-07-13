@@ -11,9 +11,10 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Constraint(validatedBy =  EstadoPaisUnicoValidator.class)
 public @interface EstadoPaisUnico {
-    String message() default "País já cadastrado para esse estado";
+    String message() default "Estado já cadastrado para esse país";
 
     Class<?>[] groups() default{};
 
     Class<? extends Payload>[] payload() default{};
+
 }
